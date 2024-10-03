@@ -1,4 +1,9 @@
-# React + Vite
+# React + Vite chrome extension
+
+### set up the manifest.json file
+- set default popup to index.html
+- set permission for scripting and storage
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
