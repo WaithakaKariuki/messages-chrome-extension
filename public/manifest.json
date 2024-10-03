@@ -13,6 +13,6 @@
     "https://*/*"
   ],
   "icons": {
-    "32": "icon200.png"
+    "128": "./images/icon128.png"
   }
 }
