@@ -38,7 +38,6 @@ export default function List({messages}) {
                   </p>)
                   :
                   (<p className="flex items-center text-sm text-green-800">
-                    {/* <EnvelopeOpenIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-green-200" aria-hidden="true" /> */}
                   </p>)
                 } 
                 </div>
