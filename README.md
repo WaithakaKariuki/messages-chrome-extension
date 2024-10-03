@@ -13,8 +13,6 @@ If you've previously installed create-react-app globally via npm install -g crea
 - set default popup to index.html
 - set permission for scripting and storage
 
-## File Structure
-![](public/images/file-structure.png)
 
 
 ## screenshot
