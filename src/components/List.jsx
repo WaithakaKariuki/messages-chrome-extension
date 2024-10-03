@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 export default function List({messages}) {
 
   function handleRead(e){
-    console.log(e.target.value)
+    // console.log(e.target.value)
     fetch("http://localhost:3000/messages",{
       method: "POST",
       headers :{
