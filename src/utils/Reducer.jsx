@@ -3,16 +3,12 @@ const messageReducer = (state, action) => {
       case "SORT":
         return { ...state, sort: action.payload };
       case "SORT_BY_PRIORITY":
-        return { ...state, category: action.payload, sort: false };
+        return { ...state, sort: action.payload};
       case "SORT_BY_UNREAD":
-        return {  meal_type:"", sort:false };
+        return {  ...state, sort:action.payload };
       case "CLEAR_FILTERS":
         return {
-          delivery_cost: "",
-          searchQuery: "",
           sort:false,
-          category:false,
-          search:""
         };
       default:
         return state;

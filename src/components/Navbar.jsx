@@ -7,14 +7,6 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-
-  const [messageState, messageDispatch] = useReducer(messageReducer, {
-    delivery_cost: "",
-    searchQuery: "",
-    sort:false,
-    category:false,
-    search:""
-  });
   return (
     <Disclosure as="nav" className="bg-gray-100 shadow">
       {({ open }) => (
