@@ -14,7 +14,20 @@ function App() {
     .then(data => {setMessages(data);
       localStorage.setItem("messages", JSON.stringify(data))
     })
+
+    chrome.storage.local.get(
+      messages.map((message) => message.id),
+      (result) => {
+        const prevFormFields = messages.map((message) => ({
+          ...message,
+          value: result[message.id] || "",
+        }));
+
+        setMessages(prevFormFields);
+      }
+    );
   },[])
+
   console.log(messages)
   
   return (
