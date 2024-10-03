@@ -14,33 +14,8 @@ If you've previously installed create-react-app globally via npm install -g crea
 - set permission for scripting and storage
 
 ## File Structure
-message-extension
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-├── public
-│   ├── img
-│   │   ├── icon-16.png
-│   │   ├── icon-48.png
-│   │   ├── icon-128.png
-│   ├── popup.html
-│   ├── options.html
-│   └── manifest.json
-└── src
-    ├── background
-    │   ├── index.js
-    ├── contentScripts
-    │   ├── index.js
-    ├── options
-    │   ├── index.js
-    │   ├── Options.js
-    ├── App.css
-    ├── App.js
-    ├── App.test.js
-    ├── index.css
-    ├── index.js
-    ├── logo.svg
+![](public/images/file-structure.png)
+
 
 ## screenshot
 
