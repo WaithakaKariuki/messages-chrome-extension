@@ -1,12 +1,20 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Fragment, useReducer } from 'react'
+import { Disclosure} from '@headlessui/react'
+import { messageReducer } from '../utils/Reducer';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+
+  const [messageState, messageDispatch] = useReducer(messageReducer, {
+    delivery_cost: "",
+    searchQuery: "",
+    sort:false,
+    category:false,
+    search:""
+  });
   return (
     <Disclosure as="nav" className="bg-gray-100 shadow">
       {({ open }) => (
@@ -21,24 +29,24 @@ export default function Navbar() {
 
                 <div className=" sm:ml-6 sm:flex sm:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <a
+                  <button
                     href="#"
-                    className=" inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                   >
                     All
-                  </a>
-                  <a
+                  </button>
+                  <button
                     href="#"
-                    className=" inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                   >
                     Unread
-                  </a>
-                  <a
+                  </button>
+                  <button
                     href="#"
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 hover:border-indigo-500 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     Priority
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

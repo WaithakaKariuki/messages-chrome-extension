@@ -1,5 +1,5 @@
 /*global chrome*/
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import './App.css'
 import List from './components/List'
 import Navbar from './components/Navbar'
