@@ -4,7 +4,11 @@
 - set default popup to index.html
 - set permission for scripting and storage
 
-
+## The extension can:
+- Show a badge icon when there are unread messages
+- Display messages in a popup when the extension icon is clicked
+- Allow users to mark messages as read
+- Store message history locally
 
 ## screenshot
 
