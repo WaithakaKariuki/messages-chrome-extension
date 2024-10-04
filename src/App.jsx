@@ -7,6 +7,7 @@ import { messageReducer } from './utils/Reducer';
 
 function App() {
   const [messages, setMessages] = useState([])
+  const [errors, setErrors] = useState([])
 
   const [messageState, messageDispatch] = useReducer(messageReducer, {
     sort:false,
@@ -20,6 +21,7 @@ function App() {
     .then(data => {console.log(data)
       setMessages(data);
     })
+    .catch(e => setErrors(e))
 
     chrome.storage.local.get(
       messages && messages.map((message) => message.id),
@@ -69,7 +71,7 @@ function App() {
     <>
       <div className='max-w-sm min-w-96'>
         <Navbar messageDispatch={messageDispatch} messageState={messageState} />
-        <List messages={transformMessages()}/>
+        <List messages={transformMessages()} errors={errors} />
       </div>
       
     </>
