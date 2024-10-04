@@ -66,9 +66,8 @@ function App() {
     }
     return sortedMessages
   
-  }, []);
+  }, [messages]);
 
-  console.log(messages,transformMessages())
   return (
     <>
       <div className='max-w-sm min-w-96'>
