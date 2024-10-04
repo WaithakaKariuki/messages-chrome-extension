@@ -8,7 +8,30 @@
 - Implement message categories or priority levels
 
 ### quick overview
-If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app to ensure that npx always uses the latest version.
+1. Backend Integration
+- Run "json-server --watch db.json" To run mock an API endpoint that would provide messages in this format:
+```json
+    {
+    "messages": [
+    {
+    "id": "msg123",
+    "content": "Team meeting at 3 PM today 🙂",
+    "priority": "high",
+    "timestamp": "2024-09-30T15:00:00Z",
+    "read": false
+    }
+    ]
+    }
+```
+2. Frontend Implementation
+- Uses React for the popup UI
+- Implement and manages state using useState and useReducer hooks
+- Style the interface using CSS Tailwind
+
+3. Extension Architecture
+- Use Chrome storage API to persist message state
+- Implements a background script to check for new messages periodically
+- Handles different states: loading, error, no messages, unread messages
 
 
 ## screenshot
