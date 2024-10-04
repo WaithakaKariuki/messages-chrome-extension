@@ -5,7 +5,7 @@ const Messages = memo(function Messages({messages}) {
   return (
     <dl  className="divide-y divide-gray-200">
         {messages.map((message) => (
-          <Disclosure  as="div" key={message.id} value={message.id}  onClick={(e)=>handleRead(e)}>
+          <Disclosure  as="div" key={message.id} >
             {({ open }) => (
               <>
               <dt>
