@@ -23,17 +23,17 @@ function App() {
     })
     .catch(e => setErrors(e))
 
-    chrome.storage.local.get(
-      messages && messages.map((message) => message.id),
-      (result) => {
-        const prevMessages = messages.map((message) => ({
-          ...message,
-          value: result[message.id] || "",
-        }));
+    // chrome.storage.local.get(
+    //   messages && messages.map((message) => message.id),
+    //   (result) => {
+    //     const prevMessages = messages.map((message) => ({
+    //       ...message,
+    //       value: result[message.id] || "",
+    //     }));
 
-        setMessages(prevMessages);
-      }
-    );
+    //     setMessages(prevMessages);
+    //   }
+    // );
   },[])
 
   
@@ -66,7 +66,7 @@ function App() {
     }
     return sortedMessages
   
-  }, [messages]);
+  }, [messages,messageState]);
 
   return (
     <>
