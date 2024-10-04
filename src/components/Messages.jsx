@@ -1,4 +1,6 @@
 /*global chrome*/
+import { Disclosure } from '@headlessui/react'
+import { BarsArrowDownIcon, BarsArrowUpIcon, CalendarIcon, EnvelopeIcon } from '@heroicons/react/16/solid'
 import React, { memo } from 'react'
 
 const Messages = memo(function Messages({messages}) {

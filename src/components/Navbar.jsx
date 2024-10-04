@@ -5,7 +5,6 @@ function classNames(...classes) {
 }
 
 export default function Navbar({messageDispatch, messageState}) {
-  console.log(messageState.sort)
 
   return (
     <Disclosure as="nav" className="sticky top-0 z-40 bg-gray-100 shadow">
