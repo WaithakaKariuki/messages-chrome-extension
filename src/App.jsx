@@ -19,20 +19,19 @@ function App() {
     .then(res => res.json())
     .then(data => {console.log(data)
       setMessages(data);
-      // localStorage.setItem("messages", JSON.stringify(data))
     })
 
-    // chrome.storage.local.get(
-    //   messages && messages.map((message) => message.id),
-    //   (result) => {
-    //     const prevMessages = messages.map((message) => ({
-    //       ...message,
-    //       id: result[message.id] || "",
-    //     }));
+    chrome.storage.local.get(
+      messages && messages.map((message) => message.id),
+      (result) => {
+        const prevMessages = messages.map((message) => ({
+          ...message,
+          value: result[message.id] || "",
+        }));
 
-    //     setMessages(prevMessages);
-    //   }
-    // );
+        setMessages(prevMessages);
+      }
+    );
   },[])
 
   // console.log(messages)
