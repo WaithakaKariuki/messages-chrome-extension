@@ -6,33 +6,36 @@ import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
 
 function App() {
+  const [messages, setMessages] = useState([])
+
   const [messageState, messageDispatch] = useReducer(messageReducer, {
     sort:false,
   });
 
-  const [messages, setMessages] = useState([])
-
+  
   useEffect(() => {
+    console.log("side effect")
     fetch("http://localhost:3000/messages")
     .then(res => res.json())
-    .then(data => {setMessages(data);
-      localStorage.setItem("messages", JSON.stringify(data))
+    .then(data => {console.log(data)
+      setMessages(data);
+      // localStorage.setItem("messages", JSON.stringify(data))
     })
 
-    chrome.storage.local.get(
-      messages.map((message) => message.id),
-      (result) => {
-        const prevFormFields = messages.map((message) => ({
-          ...message,
-          value: result[message.id] || "",
-        }));
+    // chrome.storage.local.get(
+    //   messages && messages.map((message) => message.id),
+    //   (result) => {
+    //     const prevMessages = messages.map((message) => ({
+    //       ...message,
+    //       id: result[message.id] || "",
+    //     }));
 
-        setMessages(prevFormFields);
-      }
-    );
+    //     setMessages(prevMessages);
+    //   }
+    // );
   },[])
 
-  console.log(messages)
+  // console.log(messages)
   const transformMessages = () => {
     let sortedMessages = messages;
   
@@ -59,16 +62,15 @@ function App() {
         message.read === "false"
       );
     }
-
-
     return sortedMessages
-  }
   
+  }
+  console.log(messages,transformMessages())
   return (
     <>
       <div className='max-w-sm min-w-96'>
-        <Navbar messageDispatch={messageDispatch}/>
-        <List messages={transformMessages}/>
+        <Navbar messageDispatch={messageDispatch} messageState={messageState} />
+        <List messages={transformMessages()}/>
       </div>
       
     </>
@@ -76,3 +78,19 @@ function App() {
 }
 
 export default App
+
+
+
+
+// chrome.storage.local.get(
+//   messages.map((message) => message.id),
+//   (result) => {
+//     const prevMessages = messages.map((message) => ({
+//       ...message,
+//       id: result[message.id] || "",
+//     }));
+
+//     setMessages(prevMessages);
+//   }
+// );
+// },[])
