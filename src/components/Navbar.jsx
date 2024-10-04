@@ -29,7 +29,7 @@ export default function Navbar({messageDispatch, messageState}) {
                     })
                   }
                     href="#"
-                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className=" inline-flex items-center border-b-2 border-indigo-200 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                   >
                     All
                   </button>

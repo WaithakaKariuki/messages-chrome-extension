@@ -77,19 +77,3 @@ function App() {
 }
 
 export default App
-
-
-
-
-// chrome.storage.local.get(
-//   messages.map((message) => message.id),
-//   (result) => {
-//     const prevMessages = messages.map((message) => ({
-//       ...message,
-//       id: result[message.id] || "",
-//     }));
-
-//     setMessages(prevMessages);
-//   }
-// );
-// },[])

@@ -34,7 +34,7 @@ export default function List({messages}) {
                 {message.read == "false"?
                   (<p className="animate-pulse flex items-center text-sm text-green-800">
                     <EnvelopeIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-green-400 font-semibold" aria-hidden="true" />
-                    Unread
+
                   </p>)
                   :
                   (<p className="flex items-center text-sm text-green-800">
