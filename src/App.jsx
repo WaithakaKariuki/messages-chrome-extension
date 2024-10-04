@@ -16,7 +16,6 @@ function App() {
 
   
   useEffect(() => {
-    console.log("side effect")
     fetch("http://localhost:3000/messages")
     .then(res => res.json())
     .then(data => {console.log(data)
@@ -38,7 +37,8 @@ function App() {
   },[])
 
   
-  const transformMessages = useMemo(() => {
+  const transformMessages = useMemo(() => 
+    ()=>{
     let sortedMessages = messages;
   
     if (messageState.sort === "priority") {
@@ -66,7 +66,7 @@ function App() {
     }
     return sortedMessages
   
-  }, [messageState]);
+  }, []);
 
   console.log(messages,transformMessages())
   return (

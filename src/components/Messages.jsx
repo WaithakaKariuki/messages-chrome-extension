@@ -1,9 +1,9 @@
 /*global chrome*/
-import React from 'react'
+import React, { memo } from 'react'
 
 const Messages = memo(function Messages({messages}) {
   return (
-    <dl  className="divide-y divide-gray-200">
+    <dl className="divide-y divide-gray-200">
         {messages.map((message) => (
           <Disclosure  as="div" key={message.id} >
             {({ open }) => (
