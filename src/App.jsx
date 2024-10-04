@@ -1,9 +1,10 @@
 /*global chrome*/
-import { useEffect, useReducer, useState } from 'react'
+import { Suspense, useEffect, useMemo, useReducer, useState } from 'react'
 import './App.css'
 import List from './components/List'
 import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
+import Loading from './components/Loading';
 
 function App() {
   const [messages, setMessages] = useState([])
@@ -36,8 +37,8 @@ function App() {
     );
   },[])
 
-  // console.log(messages)
-  const transformMessages = () => {
+  
+  const transformMessages = useMemo(() => {
     let sortedMessages = messages;
   
     if (messageState.sort === "priority") {
@@ -65,13 +66,16 @@ function App() {
     }
     return sortedMessages
   
-  }
+  }, [messageState]);
+
   console.log(messages,transformMessages())
   return (
     <>
       <div className='max-w-sm min-w-96'>
         <Navbar messageDispatch={messageDispatch} messageState={messageState} />
-        <List messages={transformMessages()} errors={errors} />
+        <Suspense fallback={<Loading />}>
+          <List messages={transformMessages()} errors={errors} />
+        </Suspense>
       </div>
       
     </>
