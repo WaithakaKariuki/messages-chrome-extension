@@ -1,6 +1,7 @@
+/*global chrome*/
 import React from 'react'
 
-function Messages({messages}) {
+const Messages = memo(function Messages({messages}) {
   return (
     <dl  className="divide-y divide-gray-200">
         {messages.map((message) => (
@@ -72,6 +73,6 @@ function Messages({messages}) {
         ))}
       </dl>
   )
-}
+})
 
 export default Messages

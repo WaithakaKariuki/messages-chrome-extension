@@ -1,25 +1,8 @@
-/*global chrome*/
-import { Disclosure } from '@headlessui/react'
-import {  BarsArrowUpIcon, EnvelopeIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
-import { CalendarIcon,EnvelopeOpenIcon, BarsArrowDownIcon } from '@heroicons/react/20/solid'
-import { useEffect, useState } from 'react'
+import { memo,  } from 'react'
 import Error from './Error'
 import Messages from './Messages'
 
-
-export default function List({messages,errors}) {
-
-  function handleRead(e){
-    // console.log(e.target.value)
-    fetch("http://localhost:3000/messages",{
-      method: "POST",
-      headers :{
-        'Content-Type':'application/json'
-    },
-    body: JSON.stringify("messageObj")
-    })
-  }
-
+const List = memo(function List({messages,errors}) {
   return (
    
       <div className="overflow-hidden bg-white shadow-lg sm:rounded-md">
@@ -30,6 +13,7 @@ export default function List({messages,errors}) {
       <Messages messages={messages} />
       </div>
   )
-}
+})
+export default List
 
 
