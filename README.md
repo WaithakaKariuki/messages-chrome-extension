@@ -5,14 +5,10 @@
 - Display messages in a popup when the extension icon is clicked
 - Allow users to mark messages as read
 - Store message history locally
+- Implement message categories or priority levels
 
 ### quick overview
 If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app to ensure that npx always uses the latest version.
-
-### set up the manifest.json file
-- set default popup to index.html
-- set permission for scripting and storage
-
 
 
 ## screenshot
