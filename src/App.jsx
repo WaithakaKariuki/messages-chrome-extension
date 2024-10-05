@@ -14,27 +14,43 @@ function App() {
     sort:false,
   });
 
-  
+
   useEffect(() => {
-    fetch("http://localhost:3000/messages")
-    .then(res => res.json())
-    .then(data => {console.log(data)
-      setMessages(data);
-    })
-    .catch(e => setErrors(e))
-
-    // chrome.storage.local.get(
-    //   messages && messages.map((message) => message.id),
-    //   (result) => {
-    //     const prevMessages = messages.map((message) => ({
-    //       ...message,
-    //       value: result[message.id] || "",
-    //     }));
-
-    //     setMessages(prevMessages);
-    //   }
-    // );
-  },[])
+    const fetchDataAndStore = async () => {
+      try {
+        // Check if chrome.storage.local is available
+        if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
+          throw new Error('chrome.storage.local is not available in this context.');
+        }
+        
+        chrome.storage.local.get("apiData", (result) => {
+          setMessages(result.apiData);  // Update React state
+        });
+  
+        // Fetch data from API
+        const response = await fetch("http://localhost:3000/messages");
+        const data = await response.json();
+  
+        // Save data to chrome.storage.local
+        await chrome.storage.local.set({ "apiData": data });
+        console.log('Data saved to chrome.storage:', data);
+  
+        // Retrieve data from chrome.storage.local
+        chrome.storage.local.get("apiData", (result) => {
+          const updatedMessages = data.map((message) => ({
+            ...message,
+            value: result[message.id] || "",  // Use value from storage if available
+          }));
+          setMessages(updatedMessages);  // Update React state
+        });
+      } catch (error) {
+        console.error('Error fetching or saving data:', error);
+        setErrors(error);
+      }
+    };
+  
+    fetchDataAndStore();
+  }, []);
 
   
   const transformMessages = useMemo(() => 

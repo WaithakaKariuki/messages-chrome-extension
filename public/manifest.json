@@ -6,11 +6,11 @@
    "default_popup": "index.html"
   },
   "permissions":[
-    "scripting","storage"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
-    "http://*/*",
-    "https://*/*"
+    "http://localhost:3000/messages"
   ],
   "icons": {
     "128": "./images/icon128.png"
