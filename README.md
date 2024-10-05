@@ -36,7 +36,17 @@
 
 ## screenshot
 
-![](public/images/screenshot.png)
+#### main
+![](public/images/img1.png)
+
+#### All messages
+![](public/images/img2.png)
+
+#### Unread messages
+![](public/images/img3.png)
+
+#### High priority
+![](public/images/img4.png)
 
 
 #### npm test or yarn test
