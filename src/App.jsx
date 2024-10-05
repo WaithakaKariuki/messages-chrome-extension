@@ -22,7 +22,7 @@ function App() {
         if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
           throw new Error('chrome.storage.local is not available in this context.');
         }
-        
+        // Retrieve data from chrome.storage.local
         chrome.storage.local.get("apiData", (result) => {
           setMessages(result.apiData);  // Update React state
         });

@@ -1,11 +1,4 @@
-import { Disclosure} from '@headlessui/react'
-
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Navbar({messageDispatch, messageState}) {
+export default function Navbar({messageDispatch}) {
 
   return (
         <>
