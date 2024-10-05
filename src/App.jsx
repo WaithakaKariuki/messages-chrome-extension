@@ -16,12 +16,14 @@ function App() {
 
 
   useEffect(() => {
+    
     const fetchDataAndStore = async () => {
       try {
         // Check if chrome.storage.local is available
         if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
           throw new Error('chrome.storage.local is not available in this context.');
         }
+
         // Retrieve data from chrome.storage.local
         chrome.storage.local.get("apiData", (result) => {
           setMessages(result.apiData);  // Update React state
