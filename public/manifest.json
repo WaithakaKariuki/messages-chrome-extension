@@ -2,6 +2,9 @@
   "manifest_version":3,
   "version":"1.0.0",
   "name": "My Messages",
+  "background": {
+    "service_worker":"background.js"
+  },
   "action":{
    "default_popup": "index.html"
   },
