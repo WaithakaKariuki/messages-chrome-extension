@@ -6,17 +6,6 @@ const List = memo(function List({messageState}) {
   const [messages, setMessages] = useState([])
   const [errors, setErrors] = useState([])
 
-  function handleUpdateMessage(updatedMessage) {
-    const updatedMessages = messages.map((message) => {
-      if (message.id === updatedMessage.id) {
-        return updatedMessage;
-      } else {
-        return message;
-      }
-    });
-    setMessages(updatedMessages);
-  }
-
   useEffect(() => {
     
     const fetchDataAndStore = async () => {
@@ -57,8 +46,20 @@ const List = memo(function List({messageState}) {
     fetchDataAndStore();
   }, []);
 
-  const transformMessages = useMemo(() => 
-    ()=>{
+  //update the messages obj
+  function handleUpdateMessage(updatedMessage) {
+    const updateMessages = messages.map((message) => {
+      if (message.id === updatedMessage.id) {
+        return updatedMessage;
+      } else {
+        return message;
+      }
+    });
+    setMessages(updateMessages)
+  }
+
+
+  const transformMessages = ()=>{
     let sortedMessages = messages;
   
     if (messageState.sort === "priority") {
@@ -74,7 +75,7 @@ const List = memo(function List({messageState}) {
     }
     return sortedMessages
   
-  }, [messages,messageState]);
+  }
 
   return (
    

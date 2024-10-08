@@ -6,17 +6,11 @@ import React, { memo } from 'react'
 const Messages = memo(function Messages({message,onUpdateMessage}) {
   // check if a message is read and update it
   function handleReadMessage(){
-    fetch(`http://localhost:3000/messages/${message.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        read: true,
-      }),
-    })
-      .then((r) => r.json())
-      .then((updatedMessage) => onUpdateMessage(updatedMessage));
+    const updatedMessage = {
+      ...message,
+      read : true
+    }
+    onUpdateMessage(updatedMessage);
   }
 
   return (
