@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react'
 import { BarsArrowDownIcon, BarsArrowUpIcon, CalendarIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import React, { memo } from 'react'
 
-const Messages = memo(function Messages({message,onUpdateMessage}) {
+const Message = memo(function Message({message,onUpdateMessage}) {
   // check if a message is read and update it
   function handleReadMessage(){
     const updatedMessage = {
@@ -96,4 +96,4 @@ const Messages = memo(function Messages({message,onUpdateMessage}) {
   )
 })
 
-export default Messages
+export default Message

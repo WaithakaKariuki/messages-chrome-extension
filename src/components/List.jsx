@@ -1,6 +1,6 @@
 import { memo, useState, useEffect, useMemo } from 'react'
 import Error from './Error'
-import Messages from './Messages'
+import Message from './Message'
 
 const List = memo(function List({messageState}) {
   const [messages, setMessages] = useState([])
@@ -86,7 +86,7 @@ const List = memo(function List({messageState}) {
       }
         <dl className="divide-y divide-gray-200">
             {transformMessages().map((message) => (
-          <Messages key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
+          <Message key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
         ))}
         </dl>
       </div>
