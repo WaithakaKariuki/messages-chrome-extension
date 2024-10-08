@@ -12,7 +12,7 @@ const Messages = memo(function Messages({message,onUpdateMessage}) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        read: !message.read,
+        read: true,
       }),
     })
       .then((r) => r.json())
