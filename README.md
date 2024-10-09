@@ -1,11 +1,11 @@
-# React + Vite chrome extension
+# React + Vite Chrome browser extension that displays organization-wide messages from an admin to users.
 
 ## Features
-- Show a badge icon when there are unread messages
-- Display messages in a popup when the extension icon is clicked
-- Allow users to mark messages as read
-- Store message history locally
-- Implement message categories or priority levels
+- Shows a badge icon when there are unread messages
+- Displays messages in a popup when the extension icon is clicked
+- Allows users to mark messages as read
+- Stores message history locally
+- Implements message categories or priority levels
 
 ### quick overview
 1. Backend Integration
@@ -25,14 +25,21 @@
 ```
 2. Frontend Implementation
 - Uses React for the popup UI
-- Implement and manages state using useState and useReducer hooks
-- Style the interface using CSS Tailwind
+- Implements and manages state using useState and useReducer hooks
+- Styles the interface using CSS Tailwind
 
 3. Extension Architecture
-- Use Chrome storage API to persist message state
+- Uses Chrome storage API to persist message state
 - Implements a background script to check for new messages periodically
 - Handles different states: loading, error, no messages, unread messages
 
+4. It incorporates:
+- Code organization and architecture
+- State management and data flow
+- Error handling and edge cases
+- UI/UX considerations
+- Performance optimization( useMemo, memo, lazy & suspense)
+- Documentation and comments
 
 ## screenshots
 

@@ -4,7 +4,6 @@
     badgeCount += 1;
     chrome.action.setBadgeText({ text: badgeCount.toString() });
     chrome.action.setBadgeBackgroundColor({ color: '#6366f1' });
-    console.log("called badge")
   }
 
 
@@ -19,6 +18,10 @@ function showNotification(title, message) {
     priority: 2
   });
   addBadge()
+
+  // Play notification sound
+  const audio = new Audio(chrome.runtime.getURL("assets/notification.mp3"));
+  audio.play();
 }
 
 // Function to store the lastMessageId in chrome.storage.local
