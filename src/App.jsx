@@ -5,6 +5,7 @@ import List from './components/List'
 import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
 import Loading from './components/Loading';
+import Search from './components/Search';
 
 let apiData 
 chrome.storage.local.get("apiData", (result) => {
@@ -21,6 +22,7 @@ function App() {
     <>
       <div className='max-w-sm min-w-96'>
         <Navbar messageDispatch={messageDispatch} messageState={messageState} />
+        <Search/>
         <Suspense fallback={<Loading />}>
           <List messageState={messageState} apiData={apiData} />
         </Suspense>
