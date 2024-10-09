@@ -9,8 +9,13 @@
     "scripting",
     "storage",
     "notifications",
-    "alarms"
+    "alarms",
+    "webRequest", 
+    "*://*/*"
   ],
+  "background": {
+    "service_worker": "../src/background/background.js"
+  },
   "host_permissions": [
     "http://localhost:3000/messages"
   ],

@@ -7,6 +7,7 @@ import { messageReducer } from './utils/Reducer';
 import Loading from './components/Loading';
 
 function App() {
+  chrome.action.setBadgeText({ text: '' });
   const [messageState, messageDispatch] = useReducer(messageReducer, {
     sort:"",
   });
