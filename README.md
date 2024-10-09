@@ -34,10 +34,7 @@
 - Handles different states: loading, error, no messages, unread messages
 
 
-## screenshot
-
-#### main
-![](public/images/img1.png)
+## screenshots
 
 #### All messages
 ![](public/images/img2.png)
@@ -50,6 +47,11 @@
 
 #### Notifications badge
 ![](public/images/img5.png)
+
+#### Search
+![](public/images/img6.png)
+
+
 
 
 #### npm test or yarn test
