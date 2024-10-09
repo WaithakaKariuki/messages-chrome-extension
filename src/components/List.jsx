@@ -66,13 +66,17 @@ const List = memo(function List({apiData,messageState}) {
     if (messageState.sort === "priority") {
       sortedMessages = sortedMessages.filter((message) => message.priority === "high");
     }
-
     if (messageState.sort  === "default") {
       sortedMessages = sortedMessages.sort((a, b) => b.id - a.id);
     }
-
     if (messageState.sort  === "unread") {
       sortedMessages = sortedMessages.filter((message) => message.read === false);
+    }
+    if (search) {
+      sortedMessages = sortedMessages.filter((message) =>
+        message.description||message.name?
+        message.description.toLowerCase().includes(search) || message.name.toLowerCase().includes(search):message
+      );
     }
     return sortedMessages
   

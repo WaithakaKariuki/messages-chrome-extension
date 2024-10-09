@@ -21,8 +21,8 @@ function App() {
   return (
     <>
       <div className='max-w-sm min-w-96'>
-        <Navbar messageDispatch={messageDispatch} messageState={messageState} />
-        <Search/>
+        <Navbar messageDispatch={messageDispatch}/>
+        <Search messageDispatch={messageDispatch}/>
         <Suspense fallback={<Loading />}>
           <List messageState={messageState} apiData={apiData} />
         </Suspense>
