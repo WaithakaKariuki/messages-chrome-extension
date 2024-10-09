@@ -6,8 +6,6 @@
     chrome.action.setBadgeBackgroundColor({ color: '#6366f1' });
   }
 
-
-
 // Function to create a Chrome notification
 function showNotification(title, message) {
   chrome.notifications.create({
