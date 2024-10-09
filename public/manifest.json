@@ -14,7 +14,7 @@
     "*://*/*"
   ],
   "background": {
-    "service_worker": "../src/background/background.js"
+    "service_worker": "background.js"
   },
   "host_permissions": [
     "http://localhost:3000/messages"
