@@ -3,7 +3,7 @@
   function addBadge() {
     badgeCount += 1;
     chrome.action.setBadgeText({ text: badgeCount.toString() });
-    chrome.action.setBadgeBackgroundColor({ color: '#3b82f6' });
+    chrome.action.setBadgeBackgroundColor({ color: '#6366f1' });
     console.log("called badge")
   }
 
@@ -44,6 +44,8 @@ async function fetchMessages() {
     const messages = await response.json();
 
     if (messages.length > 0) {
+      chrome.storage.local.set({ "apiData": messages });
+
       const latestMessage = messages[messages.length - 1]; // Get the last message
 
       // Get the lastMessageId stored in Chrome storage
