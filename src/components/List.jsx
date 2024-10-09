@@ -1,8 +1,8 @@
-import { memo, useState, useEffect, useMemo } from 'react'
+import { memo, useState, useEffect, Suspense } from 'react'
 import Error from './Error'
-import Message from './Message'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
-
+import Loading from './Loading.jsx';
+const Message = lazy(() => import('./Message.js'));
 
 const List = memo(function List({apiData,messageState}) {
   const [messages, setMessages] = useState(apiData)
@@ -80,7 +80,6 @@ const List = memo(function List({apiData,messageState}) {
         message.content.toLowerCase().includes(messageState.search):message
       );
     }
-    console.log(sortedMessages)
     return sortedMessages
   
   }
@@ -109,7 +108,9 @@ const List = memo(function List({apiData,messageState}) {
       }
         <dl className="divide-y divide-gray-200">
             {transformMessages().map((message) => (
-          <Message key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
+              <Suspense fallback={<Loading />}>
+                <Message key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
+              </Suspense>
         ))}
         </dl>
       </div>
