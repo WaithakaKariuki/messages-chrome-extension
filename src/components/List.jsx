@@ -74,8 +74,8 @@ const List = memo(function List({apiData,messageState}) {
     }
     if (messageState.search) {
       sortedMessages = sortedMessages.filter((message) =>
-        message.description||message.name?
-        message.description.toLowerCase().includes(search) || message.name.toLowerCase().includes(search):message
+        message.content?
+        message.content.toLowerCase().includes(search):message
       );
     }
     return sortedMessages
