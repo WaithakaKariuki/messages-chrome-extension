@@ -10,8 +10,7 @@
     "storage",
     "notifications",
     "alarms",
-    "webRequest", 
-    "*://*/*"
+    "webRequest"
   ],
   "background": {
     "service_worker": "background.js"
