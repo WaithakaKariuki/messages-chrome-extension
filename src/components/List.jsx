@@ -1,4 +1,4 @@
-import { memo, useState, useEffect, Suspense } from 'react'
+import { memo, useState, useEffect, Suspense, lazy } from 'react'
 import Error from './Error'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
 import Loading from './Loading.jsx';
