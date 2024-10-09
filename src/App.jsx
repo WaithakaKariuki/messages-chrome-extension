@@ -16,6 +16,7 @@ function App() {
   chrome.action.setBadgeText({ text: '' });
   const [messageState, messageDispatch] = useReducer(messageReducer, {
     sort:"",
+    search:""
   });
 
   return (

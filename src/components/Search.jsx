@@ -1,14 +1,14 @@
-export default function Search({messageState,messageDispatch}) {
+export default function Search({messageDispatch}) {
     return (
         <div className="mx-4 mb-2">
             <div className="relative mt-1 flex items-center">
             <input
                 onChange={(e) =>
-                    messageDispatch({
-                      type: "SORT",
-                      payload: e.target.value,
-                    })
-                  }
+                messageDispatch({
+                    type: "FILTER_BY_SEARCH",
+                    payload: e.target.value,
+                })
+                }
                 placeholder="search message ..."
                 type="text"
                 name="search"

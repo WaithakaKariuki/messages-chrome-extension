@@ -6,6 +6,8 @@ const messageReducer = (state, action) => {
         return { ...state, sort: action.payload};
       case "SORT_BY_UNREAD":
         return {  ...state, sort:action.payload };
+      case "FILTER_BY_SEARCH":
+        return { ...state, search: action.payload };
       case "CLEAR_FILTERS":
         return {
           sort:false,
