@@ -18,7 +18,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
         {({ open }) => (
           <>
           <dt>
-            <div className="block hover:bg-gray-50">
+            <div className="block hover:bg-green-100">
               <div className="px-2 py-1.5 sm:px-2">
                 <div className="flex items-center justify-between">
                   <div className="sm:flex">

@@ -48,6 +48,9 @@
 #### High priority
 ![](public/images/img4.png)
 
+#### Notifications badge
+![](public/images/img5.png)
+
 
 #### npm test or yarn test
 Runs the test watcher in an interactive mode.

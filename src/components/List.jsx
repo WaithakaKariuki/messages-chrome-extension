@@ -2,8 +2,9 @@ import { memo, useState, useEffect, useMemo } from 'react'
 import Error from './Error'
 import Message from './Message'
 
-const List = memo(function List({messageState}) {
-  const [messages, setMessages] = useState([])
+
+const List = memo(function List({apiData,messageState}) {
+  const [messages, setMessages] = useState(apiData)
   const [errors, setErrors] = useState([])
 
   useEffect(() => {
