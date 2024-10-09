@@ -3,7 +3,7 @@
   function addBadge() {
     badgeCount += 1;
     chrome.action.setBadgeText({ text: badgeCount.toString() });
-    chrome.action.setBadgeBackgroundColor({ color: '#22c55e' });
+    chrome.action.setBadgeBackgroundColor({ color: '#3b82f6' });
     console.log("called badge")
   }
 
