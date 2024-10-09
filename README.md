@@ -6,6 +6,7 @@
 - Allows users to mark messages as read
 - Stores message history locally
 - Implements message categories or priority levels
+- Adds notification sounds for high-priority messages
 
 ### quick overview
 1. Backend Integration
