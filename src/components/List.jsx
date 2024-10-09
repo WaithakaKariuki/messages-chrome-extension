@@ -1,6 +1,7 @@
 import { memo, useState, useEffect, useMemo } from 'react'
 import Error from './Error'
 import Message from './Message'
+import { InformationCircleIcon } from '@heroicons/react/24/solid'
 
 
 const List = memo(function List({apiData,messageState}) {
@@ -62,6 +63,7 @@ const List = memo(function List({apiData,messageState}) {
 
   const transformMessages = ()=>{
     let sortedMessages = messages;
+    console.log(messageState.search)
   
     if (messageState.sort === "priority") {
       sortedMessages = sortedMessages.filter((message) => message.priority === "high");
@@ -75,9 +77,10 @@ const List = memo(function List({apiData,messageState}) {
     if (messageState.search) {
       sortedMessages = sortedMessages.filter((message) =>
         message.content?
-        message.content.toLowerCase().includes(search):message
+        message.content.toLowerCase().includes(messageState.search):message
       );
     }
+    console.log(sortedMessages)
     return sortedMessages
   
   }
@@ -88,6 +91,21 @@ const List = memo(function List({apiData,messageState}) {
       {
         errors.length>=1 &&
         (<Error errors={errors} />)
+      }
+      {
+        transformMessages().length<1 &&
+        (
+          <div className="rounded-md bg-blue-50 p-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
+            </div>
+            <div className="ml-3 flex-1 md:flex md:justify-between">
+              <p className="text-sm text-blue-700">No messages found!</p>
+            </div>
+          </div>
+        </div>
+        )
       }
         <dl className="divide-y divide-gray-200">
             {transformMessages().map((message) => (
