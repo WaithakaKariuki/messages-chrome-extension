@@ -1,8 +1,8 @@
-import { memo, useState, useEffect, Suspense, lazy } from 'react'
+import { memo, useState, useEffect, Suspense, lazy, useCallback } from 'react'
 import Error from './Error'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
 import Loading from './Loading.jsx';
-const Message = lazy(() => import('./Message.js'));
+const Message = lazy(() => import('./Message.jsx'));
 
 const List = memo(function List({apiData,messageState}) {
   const [messages, setMessages] = useState(apiData)
@@ -61,7 +61,7 @@ const List = memo(function List({apiData,messageState}) {
   }
 
 
-  const transformMessages = ()=>{
+  const transformMessages = useCallback(()=>{
     let sortedMessages = messages;
     console.log(messageState.search)
   
@@ -82,7 +82,7 @@ const List = memo(function List({apiData,messageState}) {
     }
     return sortedMessages
   
-  }
+  },[messages, messageState])
 
   return (
    
@@ -117,5 +117,3 @@ const List = memo(function List({apiData,messageState}) {
   )
 })
 export default List
-
-
