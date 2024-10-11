@@ -4,8 +4,8 @@ import { InformationCircleIcon } from '@heroicons/react/24/solid'
 import Loading from './Loading.jsx';
 const Message = lazy(() => import('./Message.jsx'));
 
-const List = memo(function List({apiData,messageState}) {
-  const [messages, setMessages] = useState(apiData)
+const List = memo(function List({messageState}) {
+  const [messages, setMessages] = useState([])
   const [errors, setErrors] = useState([])
 
   useEffect(() => {
@@ -60,10 +60,8 @@ const List = memo(function List({apiData,messageState}) {
     setMessages(updateMessages)
   }
 
-
   const transformMessages = useCallback(()=>{
     let sortedMessages = messages;
-    console.log(messageState.search)
   
     if (messageState.sort === "priority") {
       sortedMessages = sortedMessages.filter((message) => message.priority === "high");
@@ -85,35 +83,34 @@ const List = memo(function List({apiData,messageState}) {
   },[messages, messageState])
 
   return (
-   
-      <div className="overflow-hidden bg-white shadow-lg sm:rounded-md">
-      {
-        errors.length>=1 &&
-        (<Error errors={errors} />)
-      }
-      {
-        transformMessages().length<1 &&
-        (
-          <div className="rounded-md bg-blue-50 p-4">
-          <div className="flex">
-            <div className="flex-shrink-0">
-              <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
-            </div>
-            <div className="ml-3 flex-1 md:flex md:justify-between">
-              <p className="text-sm text-blue-700">No messages found!</p>
-            </div>
-          </div>
-        </div>
-        )
-      }
-        <dl className="divide-y divide-gray-200">
+    <div className="overflow-hidden bg-white shadow-lg sm:rounded-md">   
+        <dl className="divide-y divide-gray-200">          
             {transformMessages().map((message) => (
-              <Suspense fallback={<Loading />}>
+              <Suspense fallback={<Loading />}> 
                 <Message key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
               </Suspense>
-        ))}
-        </dl>
-      </div>
+            ))}          
+        </dl>            
+        {
+        errors.length>=1 &&
+        (<Error errors={errors} />)
+        }
+        {
+          transformMessages().length<1 &&
+          (
+            <div className="rounded-md bg-blue-50 p-4">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
+              </div>
+              <div className="ml-3 flex-1 md:flex md:justify-between">
+                <p className="text-sm text-blue-700">No messages found!</p>
+              </div>
+            </div>
+          </div>
+          )
+        }
+    </div>
   )
 })
 export default List

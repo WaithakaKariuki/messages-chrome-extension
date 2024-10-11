@@ -6,11 +6,6 @@ import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
 import Search from './components/Search';
 
-let apiData 
-chrome.storage.local.get("apiData", (result) => {
-  apiData = (result.apiData);  // Chrome storage data
-}); 
-
 function App() {
   chrome.action.setBadgeText({ text: '' });
   const [messageState, messageDispatch] = useReducer(messageReducer, {
@@ -23,7 +18,7 @@ function App() {
       <div className='max-w-sm min-w-96'>
         <Navbar messageDispatch={messageDispatch}/>
         <Search messageDispatch={messageDispatch}/>
-          <List messageState={messageState} apiData={apiData} />
+        <List messageState={messageState}/>
       </div>  
     </>
   )
