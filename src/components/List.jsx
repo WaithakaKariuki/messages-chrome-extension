@@ -58,8 +58,6 @@ const List = memo(function List({messageState}) {
       }
     });
     chrome.storage.local.set({ "apiData": updateMessages });
-    console.log('Data saved to chrome.storage:', updateMessages);
-
     setMessages(updateMessages)
   }
 

@@ -109,49 +109,49 @@
       "id": 16,
       "content": "suggest optimization techniques for the extension",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 17,
       "content": "improve on the extension",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 18,
       "content": "test new changes on the extension",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 19,
       "content": "optimize the extension",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 20,
       "content": "we have another meeting at 2",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 21,
       "content": "meeting time changed to 2.30 pm",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 22,
       "content": "Velit vel in a rerum natus facere.",
       "priority": "low",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     }
   ]

@@ -1,5 +1,4 @@
 // Listen for messages from background.js
-console.log('Content script loaded');
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "playSound") {
         // Play notification sound
