@@ -7,19 +7,29 @@
   }
 
 // Function to create a Chrome notification
-function showNotification(title, message) {
-  chrome.notifications.create({
-    type: 'basic',
-    iconUrl: chrome.runtime.getURL('icon128.png'),  // Icon
-    title: title,
-    message: message,
-    priority: 2
-  });
-  addBadge()
+function showNotification(title, messages) {
+    chrome.notifications.create({
+      type: 'basic',
+      iconUrl: chrome.runtime.getURL('icon128.png'),  // Icon
+      title: title,
+      message: messages,
+      priority: 2
+    });
+    addBadge()
 
-  // Play notification sound
-  const audio = new Audio(chrome.runtime.getURL("assets/notification.mp3"));
-  audio.play();
+  // chrome.scripting.executeScript({
+  //   target: { tabId: this.tab.id },
+  //   func: playSound  // Inject this function
+  // })
+  // Send a message to popup/content script to play the notification sound
+  chrome.runtime.sendMessage({ action: 'playSound' });  
+}
+
+// Function to be injected that plays the sound
+function playSound() {
+  console.log("notify me")
+  const audio = new Audio(chrome.runtime.getURL("./src/assets/notification.mp3"));
+  audio.play().catch(error => console.error('Error playing audio:', error));
 }
 
 // Function to store the lastMessageId in chrome.storage.local

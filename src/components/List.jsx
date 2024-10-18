@@ -48,7 +48,7 @@ const List = memo(function List({messageState}) {
     fetchDataAndStore();
   }, []);
 
-  //update the messages obj
+  //update the messages
   function handleUpdateMessage(updatedMessage) {
     const updateMessages = messages.map((message) => {
       if (message.id === updatedMessage.id) {
@@ -57,6 +57,9 @@ const List = memo(function List({messageState}) {
         return message;
       }
     });
+    chrome.storage.local.set({ "apiData": updateMessages });
+    console.log('Data saved to chrome.storage:', updateMessages);
+
     setMessages(updateMessages)
   }
 
@@ -80,7 +83,7 @@ const List = memo(function List({messageState}) {
     }
     return sortedMessages
   
-  },[messages, messageState])
+  },[messages,messageState])
 
   return (
     <div className="overflow-hidden bg-white shadow-lg sm:rounded-md">   

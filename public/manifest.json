@@ -8,13 +8,17 @@
   "permissions":[
     "scripting",
     "storage",
-    "notifications",
-    "alarms",
-    "webRequest"
+    "activeTab"
   ],
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
   "host_permissions": [
     "http://localhost:3000/messages"
   ],
