@@ -8,6 +8,9 @@
   "permissions":[
     "scripting",
     "storage",
+    "notifications",
+    "alarms",
+    "webRequest",
     "activeTab"
   ],
   "background": {
