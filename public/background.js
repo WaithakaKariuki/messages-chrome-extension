@@ -18,12 +18,27 @@ function showNotification(title, messages) {
     addBadge()
 
       // Send message to the content script to play the sound
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    if (tabs.length > 0) {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "playSound" });
-    }
-  });
- 
+      chrome.tabs.query({ active: true}, (tabs) => {
+        if (tabs.length > 0) {
+          // Dynamically inject the content script if needed
+          chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            files: ['content.js']
+          }, () => {
+            // Now send the message after injecting the script
+            chrome.tabs.sendMessage(tabs[0].id, { action: "playSound" }, (response) => {
+              if (chrome.runtime.lastError) {
+                console.error("Error sending message to tab:", chrome.runtime.lastError);
+              } else {
+                console.log("Message sent successfully!");
+              }
+            });
+          });
+        } else {
+          console.log("No valid tab found or the tab is not a web page.");
+        }
+      });
+ console.log("showNt called")
 }
 
 // Function to store the lastMessageId in chrome.storage.local
