@@ -17,19 +17,13 @@ function showNotification(title, messages) {
     });
     addBadge()
 
-  // chrome.scripting.executeScript({
-  //   target: { tabId: this.tab.id },
-  //   func: playSound  // Inject this function
-  // })
-  // Send a message to popup/content script to play the notification sound
-  chrome.runtime.sendMessage({ action: 'playSound' });  
-}
-
-// Function to be injected that plays the sound
-function playSound() {
-  console.log("notify me")
-  const audio = new Audio(chrome.runtime.getURL("./src/assets/notification.mp3"));
-  audio.play().catch(error => console.error('Error playing audio:', error));
+      // Send message to the content script to play the sound
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs.length > 0) {
+      chrome.tabs.sendMessage(tabs[0].id, { action: "playSound" });
+    }
+  });
+ 
 }
 
 // Function to store the lastMessageId in chrome.storage.local
