@@ -45,8 +45,8 @@
     {
       "id": 7,
       "content": "Team meeting at 9 PM today!! 🙂",
-      "priority": "high",
-      "read": false,
+      "priority": "low",
+      "read": true,
       "timestamp": "2024-10-22T15:00:00Z"
     },
     {
@@ -66,8 +66,8 @@
     {
       "id": 10,
       "content": "There will be a team meeting at 4 PM today",
-      "priority": "high",
-      "read": false,
+      "priority": "low",
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
@@ -81,7 +81,7 @@
       "id": 12,
       "content": "I meant your presentations",
       "priority": "high",
-      "read": true,
+      "read": false,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
@@ -94,8 +94,8 @@
     {
       "id": 14,
       "content": "notifications badge color updated",
-      "priority": "high",
-      "read": true,
+      "priority": "low",
+      "read": false,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
@@ -108,8 +108,8 @@
     {
       "id": 16,
       "content": "suggest optimization techniques for the extension",
-      "priority": "high",
-      "read": true,
+      "priority": "low",
+      "read": false,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
@@ -122,8 +122,8 @@
     {
       "id": 18,
       "content": "test new changes on the extension",
-      "priority": "high",
-      "read": true,
+      "priority": "low",
+      "read": false,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
@@ -143,7 +143,7 @@
     {
       "id": 21,
       "content": "meeting time changed to 2.30 pm",
-      "priority": "high",
+      "priority": "low",
       "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
@@ -151,7 +151,7 @@
       "id": 22,
       "content": "Velit vel in a rerum natus facere.",
       "priority": "low",
-      "read": true,
+      "read": false,
       "timestamp": "2024-10-10T16:00:00Z"
     }
   ]

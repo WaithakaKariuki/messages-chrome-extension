@@ -1,4 +1,5 @@
 export default function Navbar({messageDispatch}) {
+  
   return (
       <>
         <div className="sticky top-0 z-40 bg-gray-200 dark:bg-gray-800 shadow">
@@ -18,7 +19,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className=" inline-flex items-center border-b-2 border-indigo-200 dark:border-indigo-800 hover:border-indigo-500 px-1 pt-1 text-sm font-medium dark:text-white text-gray-900"
+                    className=" inline-flex items-center border-b-2 border-indigo-200 dark:border-indigo-200 hover:border-indigo-200 px-1 pt-1 text-sm font-medium dark:text-white active:text-gray-700 focus:border-indigo-800 dark:active:text-gray-300 dark:focus:border-indigo-500 text-gray-900"
                   >
                     All
                   </button>
@@ -30,7 +31,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white"
+                    className=" inline-flex items-center border-b-2 border-indigo-200 dark:border-indigo-200 hover:border-indigo-200 px-1 pt-1 text-sm font-medium dark:text-white active:text-gray-700 focus:border-indigo-800 dark:active:text-gray-300 dark:focus:border-indigo-500 text-gray-900"
                   >
                     Unread
                   </button>
@@ -42,7 +43,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className="inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white"
+                    className=" inline-flex items-center border-b-2 border-indigo-200 dark:border-indigo-200 hover:border-indigo-200 px-1 pt-1 text-sm font-medium dark:text-white active:text-gray-700 focus:border-indigo-800 dark:active:text-gray-300 dark:focus:border-indigo-500 text-gray-900"
                   >
                     Priority
                   </button>
