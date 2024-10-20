@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <div className='max-w-sm min-w-96 '>
+      <div className='max-w-sm min-w-96 dark'>
         <Navbar messageDispatch={messageDispatch}/>
         <Search messageDispatch={messageDispatch}/>
         <List messageState={messageState} />

@@ -61,7 +61,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                   <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-100" >{(message.content).slice(0,10)}...</p>
                   <div className="mt-0 flex sm:flex sm:justify-between justify-center">
                     <Disclosure.Button                                      
-                      className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 sm:mt-0 sm:ml-6 -mb-1">
+                      className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 sm:mt-0 sm:ml-6 -mb-1">
                       {open ? 
                       (
                       <BarsArrowUpIcon 
