@@ -58,7 +58,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       }                   
                     </div>
                   </div>
-                  <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-100" >{(message.content).slice(0,10)}...</p>
+                  <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-700 dark:text-indigo-100" >{(message.content).slice(0,10)}...</p>
                   <div className="mt-0 flex sm:flex sm:justify-between justify-center">
                     <Disclosure.Button                                      
                       className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 sm:mt-0 sm:ml-6 -mb-1">
@@ -76,9 +76,9 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       )}                     
                       </Disclosure.Button>
                   </div>
-                  <div className="mt-2 sm:flex sm:justify-center bg-gray-200 p-1 rounded-md">
-                      <Disclosure.Panel>
-                        <p className="text-wrap mt-2 text-sm font-medium text-indigo-600 dark:text-indigo-50">{message.content}</p>
+                  <div className="mt-2 sm:flex sm:justify-center bg-gray-200 dark:bg-gray-800 rounded-md">
+                      <Disclosure.Panel className="p-1">
+                        <p className="text-wrap my-1 pl-1 text-center hover:text-left text-sm font-medium text-indigo-700 hover:indigo-900 dark:text-indigo-50">{message.content}</p>
                       </Disclosure.Panel>
                   </div>               
                 </div>

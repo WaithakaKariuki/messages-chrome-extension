@@ -25,7 +25,7 @@
       "id": 4,
       "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-13-30T15:00:00Z"
     },
     {
