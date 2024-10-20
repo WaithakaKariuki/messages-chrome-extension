@@ -7,7 +7,7 @@ import { messageReducer } from './utils/Reducer';
 import Search from './components/Search';
 
 function App() {
-  // chrome.action.setBadgeText({ text: '' });
+  chrome.action.setBadgeText({ text: '' });
   console.log('badge removed successfully');
   const [messageState, messageDispatch] = useReducer(messageReducer, {
     sort:"",
