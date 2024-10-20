@@ -44,8 +44,8 @@
 
 ## screenshots
 
-#### All messages
-![](public/images/img2.png)
+#### All messages                       DarkMode
+![](public/images/img2.png)      ![](public/images/img2.png)
 
 #### Unread messages
 ![](public/images/img3.png)
