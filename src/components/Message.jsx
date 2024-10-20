@@ -70,7 +70,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       aria-hidden="true" />                   
                       ) : (
                       <BarsArrowDownIcon
-                        className="h-6 w-6" 
+                        className="h-6 w-6 animate-bounce" 
                         aria-hidden="true" 
                         />
                       )}                     
