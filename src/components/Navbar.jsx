@@ -1,10 +1,10 @@
 export default function Navbar({messageDispatch}) {
   return (
       <>
-        <div className="sticky top-0 z-40 bg-gray-200 shadow">
+        <div className="sticky top-0 z-40 bg-gray-200 dark:bg-gray-800 shadow">
           <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
             <div className="flex flex-shrink-0 justify-evenly text-lg font-semibold">
-              <h1 className='justify-center font-mono'>My Messages</h1>
+              <h1 className='justify-center dark:text-white font-mono'>My Messages</h1>
             </div>  
             <div className="flex h-8 justify-center">   
               <div className="flex">
@@ -18,7 +18,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className=" inline-flex items-center border-b-2 border-indigo-200 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className=" inline-flex items-center border-b-2 border-indigo-200 dark:border-indigo-800 hover:border-indigo-500 px-1 pt-1 text-sm font-medium dark:text-white text-gray-900"
                   >
                     All
                   </button>
@@ -30,7 +30,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className=" inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Unread
                   </button>
@@ -42,7 +42,7 @@ export default function Navbar({messageDispatch}) {
                       payload: e.target.value,
                     })
                   }
-                    className="inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    className="inline-flex items-center border-b-2 hover:border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Priority
                   </button>
