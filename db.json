@@ -81,7 +81,7 @@
       "id": 12,
       "content": "I meant your presentations",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {

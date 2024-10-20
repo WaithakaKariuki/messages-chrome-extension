@@ -76,7 +76,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       )}                     
                       </Disclosure.Button>
                   </div>
-                  <div className="mt-2 sm:flex sm:justify-center">
+                  <div className="mt-2 sm:flex sm:justify-center bg-gray-200 p-1 rounded-md">
                       <Disclosure.Panel>
                         <p className="text-wrap mt-2 text-sm font-medium text-indigo-600 dark:text-indigo-50">{message.content}</p>
                       </Disclosure.Panel>
