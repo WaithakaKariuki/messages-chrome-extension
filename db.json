@@ -88,7 +88,7 @@
       "id": 13,
       "content": "messages icon updated",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {

@@ -1,7 +1,7 @@
 export default function Search({messageDispatch}) {
     return (
-        <div className="sticky top-14 z-40 mx-4 mb-2">
-            <div className="relative mt-1 flex items-center">
+        <div className="sticky top-14 z-40 mx-2 mb-0.5">
+            <div className="relative mt-0.5 flex items-center ">
                 <input
                     onChange={(e) =>
                     messageDispatch({
