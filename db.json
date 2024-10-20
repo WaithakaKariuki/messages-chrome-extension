@@ -95,14 +95,14 @@
       "id": 14,
       "content": "notifications badge color updated",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {
       "id": 15,
       "content": "indigo-500 is the new badge color",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-10-10T16:00:00Z"
     },
     {

@@ -30,7 +30,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                     <div className="sm:flex">
                       {message.read == false?
                         (<div className="animate-pulse flex items-center">
-                          <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-green-500 dark:text-green-300 font-semibold" aria-hidden="true" />
+                          <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-green-500 dark:text-green-400 font-semibold" aria-hidden="true" />
                         </div>)
                         :
                         (<div className="flex items-center">
@@ -58,7 +58,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       }                   
                     </div>
                   </div>
-                  <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-300" >{(message.content).slice(0,10)}...</p>
+                  <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-100" >{(message.content).slice(0,10)}...</p>
                   <div className="mt-1 flex sm:flex sm:justify-between justify-center">
                     <Disclosure.Button                                      
                       className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 sm:mt-0 sm:ml-6 -mb-1">
@@ -78,7 +78,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                   </div>
                   <div className="mt-2 sm:flex sm:justify-center">
                       <Disclosure.Panel>
-                        <p className="text-wrap mt-2 text-sm font-medium text-indigo-600 dark:text-indigo-300">{message.content}</p>
+                        <p className="text-wrap mt-2 text-sm font-medium text-indigo-600 dark:text-indigo-50">{message.content}</p>
                       </Disclosure.Panel>
                   </div>               
                 </div>
