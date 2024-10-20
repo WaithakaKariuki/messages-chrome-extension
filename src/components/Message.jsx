@@ -24,7 +24,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
         {({ open }) => (
           <>
             <dt>
-              <div className="block hover:bg-green-100 bg-gray-50 dark:bg-gray-950 dark:hover:bg-green-900">
+              <div className="block hover:bg-green-100 bg-gray-100 dark:bg-gray-900 dark:hover:bg-green-900">
                 <div className="px-2 py-1.5 sm:px-2">
                   <div className="flex items-center justify-between">
                     <div className="sm:flex">
@@ -42,7 +42,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                     </div>
                     <div className="mt-1 flex items-center text-sm text-gray-500 dark:text-gray-200 sm:mt-0 border-b">
                       <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-blue-600 dark:text-blue-400" aria-hidden="true" />
-                      <div>
+                      <div className='text-blue-600 dark:text-blue-200'>
                         <time dateTime={message.timestamp}>{message.timestamp}</time>
                       </div>
                     </div>
@@ -59,7 +59,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                     </div>
                   </div>
                   <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-100" >{(message.content).slice(0,10)}...</p>
-                  <div className="mt-1 flex sm:flex sm:justify-between justify-center">
+                  <div className="mt-0 flex sm:flex sm:justify-between justify-center">
                     <Disclosure.Button                                      
                       className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 sm:mt-0 sm:ml-6 -mb-1">
                       {open ? 
