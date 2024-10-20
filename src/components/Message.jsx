@@ -24,7 +24,7 @@ const Message = memo(function Message({message,onUpdateMessage}) {
         {({ open }) => (
           <>
             <dt>
-              <div className="block hover:bg-green-100 dark:hover:bg-green-900">
+              <div className="block hover:bg-green-100 bg-gray-50 dark:bg-gray-950 dark:hover:bg-green-900">
                 <div className="px-2 py-1.5 sm:px-2">
                   <div className="flex items-center justify-between">
                     <div className="sm:flex">
@@ -58,10 +58,10 @@ const Message = memo(function Message({message,onUpdateMessage}) {
                       }                   
                     </div>
                   </div>
-                  <div className="mt-2 sm:flex sm:justify-between">
-                    <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-300" >{(message.content).slice(0,10)}...</p>
+                  <p className="text-ellipsis mt-2 truncate text-sm font-medium text-indigo-600 dark:text-indigo-300" >{(message.content).slice(0,10)}...</p>
+                  <div className="mt-1 flex sm:flex sm:justify-between justify-center">
                     <Disclosure.Button                                      
-                      className="flex items-end justify-end text-sm text-gray-800 dark:text-gray-200 sm:mt-0 sm:ml-6 -mb-1">
+                      className="flex items-center justify-end text-sm text-gray-800 dark:text-gray-200 sm:mt-0 sm:ml-6 -mb-1">
                       {open ? 
                       (
                       <BarsArrowUpIcon 

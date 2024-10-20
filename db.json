@@ -11,14 +11,14 @@
       "id": 2,
       "content": "Doloremque dolorem maiores assumenda dolorem facilis. Velit vel in a rerum natus facere. Enim rerum eaque qui facilis. Numquam laudantium sed id dolores omnis in. Eos reiciendis deserunt maiores et accusamus quod dolor.",
       "priority": "low",
-      "read": false,
+      "read": true,
       "timestamp": "2024-14-30T15:00:00Z"
     },
     {
       "id": 3,
       "content": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
       "priority": "low",
-      "read": false,
+      "read": true,
       "timestamp": "2024-13-30T15:00:00Z"
     },
     {
