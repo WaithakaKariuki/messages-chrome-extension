@@ -84,8 +84,8 @@ const List = memo(function List({messageState}) {
   },[messages,messageState])
 
   return (
-    <div className="overflow-hidden bg-white shadow-lg sm:rounded-md">   
-        <dl className="divide-y divide-gray-200">          
+    <div className="overflow-hidden bg-white dark:bg-slate-800 shadow-lg sm:rounded-md">   
+        <dl className="divide-y divide-gray-200 dark:divide-gray-100">          
             {transformMessages().map((message) => (
               <Suspense fallback={<Loading />}> 
                 <Message key={message.id} message={message} onUpdateMessage={handleUpdateMessage} />
@@ -99,13 +99,13 @@ const List = memo(function List({messageState}) {
         {
           transformMessages().length<1 &&
           (
-            <div className="rounded-md bg-blue-50 p-4">
+            <div className="rounded-md bg-blue-50 dark:bg-blue-900 p-4">
             <div className="flex">
               <div className="flex-shrink-0">
-                <InformationCircleIcon className="h-5 w-5 text-blue-400" aria-hidden="true" />
+                <InformationCircleIcon className="h-5 w-5 text-blue-400 dark:text-blue-100" aria-hidden="true" />
               </div>
               <div className="ml-3 flex-1 md:flex md:justify-between">
-                <p className="text-sm text-blue-700">No messages found!</p>
+                <p className="text-sm text-blue-700 dark:text-blue-100">No messages found!</p>
               </div>
             </div>
           </div>
