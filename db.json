@@ -4,7 +4,7 @@
       "id": 1,
       "content": "Team meeting at 3 PM today 🙂",
       "priority": "high",
-      "read": false,
+      "read": true,
       "timestamp": "2024-15-30T15:00:00Z"
     },
     {
