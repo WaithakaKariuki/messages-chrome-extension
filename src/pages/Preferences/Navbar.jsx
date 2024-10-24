@@ -11,7 +11,7 @@ function Navbar() {
         className="inline-flex items-center rounded-full border border-transparent bg-indigo-600 p-3 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
         <div className='sr-only'>Back</div>
-        <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
+        <ChevronLeftIcon className="h-3 w-3" aria-hidden="true" />
       </Link> 
         <div className='flex justify-between'>
             <h1 className='text-xl pl-2 font-semibold self-center dark:text-white font-mono'>Back</h1>   
