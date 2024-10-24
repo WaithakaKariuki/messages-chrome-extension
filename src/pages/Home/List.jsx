@@ -1,8 +1,8 @@
 /*global chrome*/
 import { memo, useState, useEffect, Suspense, lazy, useCallback } from 'react'
-import Error from './Error'
+import Error from '../../components/Error.jsx'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
-import Loading from './Loading.jsx';
+import Loading from '../../components/Loading.jsx';
 const Message = lazy(() => import('./Message.jsx'));
 
 const List = memo(function List({messageState}) {

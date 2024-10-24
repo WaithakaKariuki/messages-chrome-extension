@@ -1,7 +1,7 @@
 /*global chrome*/
 import { useReducer } from 'react'
 import './App.css'
-import List from './components/List'
+import List from './pages/Home/List'
 import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
 import Search from './components/Search';
