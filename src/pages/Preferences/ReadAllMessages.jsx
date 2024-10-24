@@ -15,10 +15,10 @@ export default function ReadAllMessages() {
                     <div className="relative flex items-start py-4">
                         <div className="min-w-0 flex-1 text-lg">
                         <label htmlFor="comments" className="font-medium text-gray-900 dark:text-white tracking-tight">
-                        Mark all messages as read
+                            Mark all messages as read
                         </label>
                         <p id="comments-description" className="tracking-tighter text-xs text-gray-300">
-                            This action cannot be undone!
+                            Don't worry, there's another confirmation step.
                         </p>
                         </div>
                         <div className="ml-3 flex h-5 items-center self-center ">
