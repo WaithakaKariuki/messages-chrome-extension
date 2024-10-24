@@ -8,9 +8,11 @@ import { useState } from 'react';
 function App() {
   // chrome.action.setBadgeText({ text: '' });
   const [darkMode, setDarkMode] = useState(false)
+  const [enabled, setEnabled] = useState(false)
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
+    setEnabled(!enabled)
   }
 
   return (
@@ -19,7 +21,7 @@ function App() {
         <div className='max-w-sm min-w-96'>
           <BrowserRouter>
             <Routes>
-              <Route path="/preferences" element={<Preferences toggleDarkMode={toggleDarkMode} />} />
+              <Route path="/preferences" element={<Preferences toggleDarkMode={toggleDarkMode} enabled = {enabled} />} />
               <Route path="/" element={<Home/>} />
             </Routes>
           </BrowserRouter>
