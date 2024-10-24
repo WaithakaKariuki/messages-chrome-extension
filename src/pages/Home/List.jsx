@@ -14,32 +14,32 @@ const List = memo(function List({messageState}) {
     const fetchDataAndStore = async () => {
       try {
         // Check if chrome.storage.local is available
-        // if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
-        //   throw new Error('chrome.storage.local is not available in this context.');
-        // }
+        if (typeof chrome === "undefined" || !chrome.storage || !chrome.storage.local) {
+          throw new Error('chrome.storage.local is not available in this context.');
+        }
 
         // Retrieve data from chrome.storage.local
-        // chrome.storage.local.get("apiData", (result) => {
-        //   setMessages(result.apiData);  // Update React state
-        // });
+        chrome.storage.local.get("apiData", (result) => {
+          setMessages(result.apiData);  // Update React state
+        });
   
         // Fetch data from API
         const response = await fetch("http://localhost:3000/messages");
         const data = await response.json();
   
         // Save data to chrome.storage.local
-        // await chrome.storage.local.set({ "apiData": data });
-        // console.log('Data saved to chrome.storage:', data);
+        await chrome.storage.local.set({ "apiData": data });
+        console.log('Data saved to chrome.storage:', data);
   
         // Retrieve data from chrome.storage.local
-        // chrome.storage.local.get("apiData", (result) => {
-        //   const updatedMessages = data.map((message) => ({
-        //     ...message,
-        //     value: result[message.id] || "",  // Use value from storage if available
-        //   }));
-        //   setMessages(updatedMessages);  // Update React state
-        // });
-        setMessages(data)
+        chrome.storage.local.get("apiData", (result) => {
+          const updatedMessages = data.map((message) => ({
+            ...message,
+            value: result[message.id] || "",  // Use value from storage if available
+          }));
+          setMessages(updatedMessages);  // Update React state
+        });
+        // setMessages(data)
       } catch (error) {
         console.error('Error fetching or saving data:', error);
         setErrors(error);
@@ -58,7 +58,7 @@ const List = memo(function List({messageState}) {
         return message;
       }
     });
-    // chrome.storage.local.set({ "apiData": updateMessages });
+    chrome.storage.local.set({ "apiData": updateMessages });
     setMessages(updateMessages)
   }
 
