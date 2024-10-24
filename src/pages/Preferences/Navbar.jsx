@@ -14,8 +14,8 @@ function Navbar() {
         <ChevronLeftIcon className="h-3 w-3" aria-hidden="true" />
       </Link> 
         <div className='flex justify-between'>
-            <h1 className='text-xl pl-2 font-semibold self-center dark:text-white font-mono'>Back</h1>   
-            <h1 className='flex text-2xl pl-4 font-semibold self-center dark:text-white font-mono'>Preferences</h1> 
+            <h1 className='text-lg pl-2 font-semibold self-center dark:text-white font-mono'>Back</h1>   
+            <h1 className='flex text-xl pl-4 font-semibold self-center dark:text-white font-mono'>Preferences</h1> 
         </div>  
     </div>
   )
