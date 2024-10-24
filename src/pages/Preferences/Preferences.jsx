@@ -3,11 +3,11 @@ import Navbar from './Navbar'
 import Toggle from './Toggle'
 import ReadAllMessages from './ReadAllMessages'
 
-function Preferences({toggleDarkMode, enabled}) {
+function Preferences({toggleDarkMode, darkMode}) {
   return (
     <div>
         <Navbar/> 
-        <Toggle toggleDarkMode = {toggleDarkMode} enabled = {enabled} />   
+        <Toggle toggleDarkMode = {toggleDarkMode} darkMode = {darkMode} />   
         <ReadAllMessages/> 
     </div>
   )
