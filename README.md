@@ -62,6 +62,8 @@
 #### Search
 ![](public/images/img6.png)
 
+#### User Preferences
+![](public/images/img7.png)
 
 
 
