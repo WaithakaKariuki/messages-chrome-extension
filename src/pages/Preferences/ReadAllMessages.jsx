@@ -1,9 +1,10 @@
 import { useState } from "react"
 import Alert from "./Alert"
-import { CheckIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
+import { CheckIcon} from "@heroicons/react/24/solid"
 
 export default function ReadAllMessages() {
     const [show, setShow] = useState(false)
+
     return (
         <>
             {show? 
