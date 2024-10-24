@@ -8,7 +8,7 @@ function classNames(...classes) {
 export default function Toggle({toggleDarkMode,enabled}) {
 
   return (
-    <Switch.Group as="div" className="flex items-center justify-evenly px-4 py-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 border-t">
+    <Switch.Group as="div" className="flex items-center justify-evenly px-4 py-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 border-t border-gray-800 dark:border-white">
       <span className="flex flex-grow flex-col">
         <Switch.Label as="span" className="text-md font-medium text-gray-900 dark:text-white" passive>
           Toggle DarkMode

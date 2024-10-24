@@ -10,7 +10,7 @@ export default function ReadAllMessages() {
             {show? 
                 (<Alert show={show} setShow={setShow} />)
             :
-            (    <fieldset className="border-t border-b border-gray-200 px-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 border-t">
+            (    <fieldset className="border-t border-b border-gray-200 px-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 border-t border-gray-800 dark:border-white">
                     <legend className="sr-only">Mark all messages as read</legend>
                     <div className="divide-y divide-gray-200">
                     <div className="relative flex items-start py-4">
