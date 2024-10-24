@@ -5,6 +5,9 @@ import List from './pages/Home/List'
 import Navbar from './components/Navbar'
 import { messageReducer } from './utils/Reducer';
 import Search from './components/Search';
+import { Route, Routes, BrowserRouter} from "react-router-dom";
+import Preferences from './pages/Preferences/Preferences';
+import Home from './pages/Home/Home';
 
 function App() {
   // chrome.action.setBadgeText({ text: '' });
@@ -17,9 +20,14 @@ function App() {
   return (
     <>
       <div className='max-w-sm min-w-96 dark'>
-        <Navbar messageDispatch={messageDispatch}/>
-        <Search messageDispatch={messageDispatch}/>
-        <List messageState={messageState} />
+        <BrowserRouter>
+          <Navbar messageDispatch={messageDispatch}/>
+          <Search messageDispatch={messageDispatch}/>
+          <Home messageState={messageState} />
+          <Routes>
+            <Route path="/preference" element={<Preferences/>} />
+          </Routes>
+        </BrowserRouter>
       </div>  
     </>
   )
