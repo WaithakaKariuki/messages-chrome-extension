@@ -12,8 +12,8 @@ export default function ReadAllMessages() {
                     <label htmlFor="comments" className="font-medium text-gray-900 dark:text-white tracking-tight">
                         Mark all messages as read
                     </label>
-                    <p id="comments-description" className="tracking-tighter text-xs text-gray-300">
-                        Don't worry, there's another confirmation step.
+                    <p id="comments-description" className="tracking-tighter text-xs text-gray-800 dark:text-gray-200">
+                    Once you mark all messages as read,  you cannot undo this action
                     </p>
                     </div>
                     <div className="ml-3 flex h-5 items-center self-center ">
