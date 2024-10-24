@@ -1,11 +1,14 @@
+import { CogIcon } from "@heroicons/react/24/solid";
+
 export default function Navbar({messageDispatch}) {
   
   return (
       <>
         <div className="sticky top-0 z-40 bg-gray-200 dark:bg-gray-800 shadow">
           <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-shrink-0 justify-evenly text-lg font-semibold">
+            <div className="py-2 flex flex-shrink-0 justify-between text-lg font-semibold">
               <h1 className='justify-center dark:text-white font-mono'>My Messages</h1>
+              <CogIcon className="h-6 w-6 flex-shrink-0 text-green-500 dark:text-green-400 font-semibold" aria-hidden="true" />
             </div>  
             <div className="flex h-8 justify-center">   
               <div className="flex">
