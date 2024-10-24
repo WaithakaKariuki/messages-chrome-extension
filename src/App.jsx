@@ -9,22 +9,10 @@ function App() {
   // chrome.action.setBadgeText({ text: '' });
   const [darkMode, setDarkMode] = useState(false)
 
-  useEffect(()=>{
-    const theme = localStorage.getItem("theme")
-    if(theme){
-        setDarkMode(theme)
-    }else if(window.matchMedia("(prefers-color-scheme: dark)").matches){
-      setDarkMode(true)
-    }else{
-      setDarkMode(false)
-    }
-  },[darkMode])
-
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-    localStorage.setItem('theme', darkMode)
+    setDarkMode((darkMode)=>!darkMode) 
   }
-
+  
   return (
     <>
       <div className={`${darkMode && "dark"}`}>
