@@ -4,14 +4,19 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <div className='grid grid-cols-[auto,1fr] gap-x-4 gap-y-8'>
+    <div className='grid grid-cols-[auto,1fr] px-4 py-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 shadow'>
         <Link
-        to="/home"
+        to="/"
         type="button"
         className="inline-flex items-center rounded-full border border-transparent bg-indigo-600 p-3 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
       >
-        <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
-      </Link>     
+        <div className='sr-only'>Back</div>
+        <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
+      </Link> 
+        <div className='flex justify-between'>
+            <h1 className='text-xl pl-2 font-semibold self-center dark:text-white font-mono'>Back</h1>   
+            <h1 className='flex text-2xl pl-4 font-semibold self-center dark:text-white font-mono'>Preferences</h1> 
+        </div>  
     </div>
   )
 }

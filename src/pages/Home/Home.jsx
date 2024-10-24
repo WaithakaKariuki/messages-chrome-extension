@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import Search from './Search'
 import { messageReducer } from '../../utils/Reducer';
 
-function Home({messageState, messageDispatch}) {
+function Home() {
     const [messageState, messageDispatch] = useReducer(messageReducer, {
         sort:"",
         search:""
