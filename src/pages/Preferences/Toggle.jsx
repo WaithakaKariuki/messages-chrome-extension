@@ -9,10 +9,10 @@ export default function Toggle() {
   const [enabled, setEnabled] = useState(false)
 
   return (
-    <Switch.Group as="div" className="flex items-center justify-between">
+    <Switch.Group as="div" className="flex items-center justify-evenly px-4 py-4 bg-gray-100 bg-gray-200 dark:bg-gray-800 border-t">
       <span className="flex flex-grow flex-col">
-        <Switch.Label as="span" className="text-sm font-medium text-gray-900" passive>
-          Switch to DarkMode
+        <Switch.Label as="span" className="text-sm font-medium text-gray-900 dark:text-white" passive>
+          Toggle DarkMode
         </Switch.Label>
       </span>
       <Switch
