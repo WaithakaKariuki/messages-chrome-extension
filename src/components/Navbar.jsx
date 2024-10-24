@@ -1,4 +1,5 @@
 import { CogIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 export default function Navbar({messageDispatch}) {
   
@@ -8,7 +9,11 @@ export default function Navbar({messageDispatch}) {
           <div className="mx-auto max-w-sm px-4 sm:px-6 lg:px-8">
             <div className="py-2 flex flex-shrink-0 justify-between text-lg font-semibold">
               <h1 className='justify-center dark:text-white font-mono'>My Messages</h1>
-              <CogIcon className="h-6 w-6 flex-shrink-0 text-green-700 dark:text-green-400 font-semibold" aria-hidden="true" />
+              <Link
+              to = "/preferences"
+              >
+                <CogIcon className="h-6 w-6 flex-shrink-0 text-green-700 dark:text-green-400 font-semibold" aria-hidden="true" />
+              </Link>
             </div>  
             <div className="flex h-8 justify-center">   
               <div className="flex">

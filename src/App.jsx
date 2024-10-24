@@ -25,7 +25,7 @@ function App() {
           <Search messageDispatch={messageDispatch}/>
           <Home messageState={messageState} />
           <Routes>
-            <Route path="/preference" element={<Preferences/>} />
+            <Route path="/preferences" element={<Preferences/>} />
           </Routes>
         </BrowserRouter>
       </div>  
